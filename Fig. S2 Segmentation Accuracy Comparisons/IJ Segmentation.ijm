@@ -1,0 +1,14 @@
+run("Duplicate...", " ");
+run("Gaussian Blur...", "sigma=1");
+setAutoThreshold("Otsu dark");
+//run("Threshold...");
+//setThreshold(19, 255);
+setOption("BlackBackground", false);
+run("Convert to Mask");
+run("Watershed");
+run("Images to Stack", "use");
+run("Next Slice [>]");
+run("Grays");
+run("Invert", "slice");
+run("Previous Slice [<]");
+run("Enhance Contrast", "saturated=0.35");
